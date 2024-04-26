@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    font-size: 62.5%;
+
+    --hue: 0;
+    --white-basic: #fff;
+    --black-dark-200: hsl(240, 6%, 13%);
+    --blue-dark-900: hsl(195, 91%, 25%);
+    --blue-light-700: hsl(195, 50%, 50%);
+}
+
+html,
+body,
+input {
+    font-family: "Mulish", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "main main aside"
+        "footer footer footer";
+    grid-template-rows: 72px 1fr 32px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Header */
+header {
+    display: flex;
+}
+
+header,
+header img {
+    display: flex;
+    align-items: center;
+    gap: 2.6rem;
+}
+
+header form {
+    flex: 1;
+}
+
+header label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+header input {
+    width: 100%;
+    outline: 0;
+    border: 0;
+    background-color: var(--blue-light-700);
+    border-radius: .8rem;
+    color: var(--white-basic);
+    padding: 1.2rem 1.6rem;
+}
+
+#user {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+}
+
+input::placeholder {
+    color: var(--white-basic);
+}
+
+header img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+}
+
+body>header {
+    background-color: var(--blue-dark-900);
+    grid-area: header;
+    padding: 1.2rem 2.8rem;
+}
+
+
+/* Main */
+body>main {
+    background-color: var(--white-basic);
+    grid-area: main;
+}
+
+main img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+section,
+aside {
+    padding: 0 2.6rem 0 2.2rem; 
+}
+
+main h1 {
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%;
+    margin: 0;
+    margin-top: 3.2rem;
+    color: var(--black-dark-200);
+}
+.button-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+section button {
+    background-color: var(--blue-dark-900);
+    width: 4rem;
+    height: 4rem;
+    border: 0;
+    border-radius: 50%;
+}
+
+section .description {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    font-size: 1.6rem;
+}
+
+.like {
+    background-image: url("./assets/buttonLike.svg");
+    background-position: center;
+    object-fit: cover;
+    padding: 1.2rem;
+    background-repeat: no-repeat;
+    
+}
+.deslike {
+    background-image: url("./assets/buttonDeslike.svg");
+    background-position: center;
+    object-fit: cover;
+    padding: 1.2rem;
+    background-repeat: no-repeat;
+}
+
+
+.figure-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+aside {
+
+    margin-bottom: 3.2rem;
+}
+
+figure {
+    min-height: 8rem;
+    margin: 0;
+    display: flex;
+    gap: 1.6rem;
+}
+
+figure img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    overflow: hidden;
+
+    max-width: 15rem;
+    border-radius: .8rem;
+    max-height: 8.4rem;
+}
+
+figure h2 {
+    margin: 0;
+    margin-bottom: 1.2rem;
+}
+
+figure p {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    font-size: 1.4rem;
+    margin: 0;
+}
+figcaption {
+    max-width: 21.5rem;
+}
+/* Footer */
+body>footer {
+    grid-area: footer;
+    text-align: center;
+    background-color: var(--blue-dark-900);
+}
+
+footer p {
+    padding: 16;
+}
+
+@media (min-width: 1024px){
+    /* main{
+        padding: 4.4rem 3.4rem 3.9rem 10.9rem;
+    }
+    main img{
+        border-radius: 8px;
+    }
+    section{
+        padding: 0;
+    }
+    aside{
+        padding: 3.2rem 11.2rem 0 0;
+    } */
+}
+@media (max-width: 768px){
+    body{
+        display: flex;
+        flex-direction: column;
+        
+    }
+}

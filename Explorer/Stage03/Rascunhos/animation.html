@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        body{
+            background-color: mediumslateblue;
+        }
+        .square{
+            width: 4rem;
+            height: 4rem;
+            background-color: #fff;
+            opacity: 0.6;
+            
+            /* animation: move 1s, blink 1s;
+            animation-fill-mode: forwards;
+            animation-direction: alternate;
+            animation-timing-function: steps(10);
+            animation-iteration-count: infinite; */
+
+            animation: move 1s forwards alternate infinite, blink 100ms infinite
+            
+        }
+        .square:hover{
+            animation-play-state: paused;
+        }
+        @keyframes move { 
+            100%{
+                transform: translateX(calc(100vw - 100% - 16px));
+            }
+        }
+        @keyframes blink {
+            0%, 100%{
+                opacity: 0.1;
+            }
+            50%{
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="square"></div>
+</body>
+</html>
+
+
+
